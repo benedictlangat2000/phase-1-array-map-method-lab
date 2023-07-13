@@ -1,3 +1,4 @@
+
 const tutorials = [
   'what does the this keyword mean?',
   'What is the Constructor OO pattern?',
@@ -10,7 +11,22 @@ const tutorials = [
   'what is the difference between event capturing and bubbling?',
   'what is JSONP?'
 ];
+function titleCased() {
+  return tutorials.map(tutorial => {
+    const words = tutorial.split(' ');
 
-const titleCased = () => {
-  return tutorials
+    const capitalizedWords = words.map(word => {
+      const firstLetter = word[0].toUpperCase();
+      const restOfWord = word.slice(1);
+      return `${firstLetter}${restOfWord}`;
+    });
+
+    return capitalizedWords.join(' ');
+  });
 }
+console.log(titleCased());
+
+
+
+  
+
